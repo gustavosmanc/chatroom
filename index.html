@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="chat-rooms mb-3 text-center">
+        <div class="my-2 chat-text">Choose a chatroom:</div>
+        <button class="btn room-selected" id="general">#general</button>
+        <button class="btn" id="gaming">#gaming</button>
+        <button class="btn" id="music">#music</button>
+        <button class="btn" id="movie">#movie</button>
+      </div>
+      <div class="chat-window">
+        <ul class="chat-list list-group"></ul>
+      </div>
+      <form class="new-chat my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Your message:</div>
+          </div>
+          <input type="text" id="message" class="form-control" required />
+          <div class="input-group-append">
+            <input type="submit" class="btn custom-btn" value="Send" />
+          </div>
+        </div>
+      </form>
+      <form class="new-name my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Update name:</div>
+          </div>
+          <input type="text" id="name" class="form-control" required />
+          <div class="input-group-append">
+            <input type="submit" class="btn custom-btn" value="Update" />
+          </div>
+        </div>
+        <div class="update-mssg"></div>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyB5EizqakCD4c9G2ejYpTgvONFZd_NGgWU",
+        authDomain: "udemy-modern-javascript-cf34a.firebaseapp.com",
+        databaseURL: "https://udemy-modern-javascript-cf34a.firebaseio.com",
+        projectId: "udemy-modern-javascript-cf34a",
+        storageBucket: "udemy-modern-javascript-cf34a.appspot.com",
+        messagingSenderId: "937241550813",
+        appId: "1:937241550813:web:ca14e266e2793bd6fce034",
+        measurementId: "G-31MZD5YVV1",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
